@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="form-box">
+        <form #calculadoraForm="ngForm">
+            <h2>Calculadora</h2>
+            <label for="numero1">Número 1</label>
+            <input type="number" name="numero1" id="numero1" [(ngModel)]="numero1">
+            <!-- [()] é a sintaxe de two-way data binding do Angular, que permite receber o 
+            valor de um componente --> 
+            
+            <label for="numero2">Número 2</label>
+            <input type="number" name="numero2" id="numero2" [(ngModel)]="numero2">
+
+            <button type="button" (click)="calcularResultado()">Somar</button>
+            <!--() é a sintaxe de event binding do Angular, 
+            que permite chamar um método do componente e passar parâmetros quando um evento ocorre 
+            (neste caso, o clique no botão) --> 
+        </form>
+
+        <div clas="result-display"></div>
+            <p>Resultado: <span id="result"> {{ resultado }}</span></p>
+    </div>
+</div>
+
+
