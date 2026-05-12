@@ -16,9 +16,27 @@
 
         </form>
 
-        <div class="result-display">
-            <p>Resultado: <span id="result"> {{ resultado }}</span></p>
+        <!--ABAIXO APRENDEREMOS A USAR "IF NATIVO " E "IF NÃO NATIVO(CommonModule)"-->
+
+        <!--IF não nativo, usando "CommonModule", precisamos importar o módulo -->
+        <div class="result-display" *ngIf="resultado; else semResultado">
+            <p>Seu resultado:</p>
         </div>
+
+        <ng-template #semResultado>
+            <p>Aguardando calculo</p>
+        </ng-template>
+
+        <!-- IF nativo do angular, nesse caso ele verifica um boolean, true ou false:
+            Se resultado != 0 && resultado != null && resultado != undefined && resultado != false -->
+        @if (resultado) {
+            <div class="result-display">
+                <p>Resultado: <span id="result"> {{ resultado }}</span></p>
+            </div>        
+        } @else {
+            <p>Seu resultado aparecerá aqui</p>
+        }
+
     </div>
 </div>
 

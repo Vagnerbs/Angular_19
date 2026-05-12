@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';//Esse pacote tras diretivas não nativas como if, for, etc...
 import { Component } from '@angular/core';
 //Modulo necessario para calcular o resultado da soma dos numeros
 //Preciamos dele para trabalhar com formularios e obter os valores dos inputs.
@@ -5,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-calculadora',
-  imports: [FormsModule],//Não esquecer de importar o FormsModule para usar ngModel
+  imports: [FormsModule, CommonModule],//Não esquecer de importar o FormsModule para usar ngModel
   templateUrl: './calculadora.component.html',
   styleUrl: './calculadora.component.scss'
 })
